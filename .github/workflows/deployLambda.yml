@@ -23,7 +23,7 @@ jobs:
       - name: Package application
         run: |
           mkdir -p dist
-          zip -r dist/lambda.zip dist/* 
+          zip -r lambda.zip dist/*
       - name: Deploy to AWS Lambda AWS CLI v2
         uses: imehedi/actions-awscli-v2@latest
         with:
