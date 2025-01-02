@@ -3,9 +3,6 @@ import "dotenv/config";
 import cors from "cors";
 import routes from "./routes";
 import errorHandler from "@middlewares/error-handler";
-import { redis } from "@libs/redis";
-import { logger } from "@libs/winston";
-const serverless = require('serverless-http');
 
 const app: Express = express();
 //const port = process.env.PORT || 3000;
@@ -39,7 +36,8 @@ app.use(errorHandler);
 app.get('/', function (req, res) {
   res.send('Hello World!')
 })
-module.exports.handler = serverless(app);
+
+export default app;
 
 
 //const handler = ServerlessHttp(app);
