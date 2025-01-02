@@ -3,6 +3,7 @@ import "dotenv/config";
 import cors from "cors";
 import routes from "./routes";
 import errorHandler from "@middlewares/error-handler";
+import { redis } from "@libs/redis";
 
 const app: Express = express();
 //const port = process.env.PORT || 3000;
@@ -32,13 +33,12 @@ app.use(errorHandler);
 //});
 //
 
-
-app.get('/', function (req, res) {
-  res.send('Hello World!')
-})
+app.get("/", async function (req, res) {
+	const cachedExamList = await redis.get("cached:examList:frequency");
+	res.json({ message: "Hello World", cachedExamList });
+});
 
 export default app;
-
 
 //const handler = ServerlessHttp(app);
 //module.exports.handler = async (event: any, context: any) => {
