@@ -13,8 +13,6 @@
 	"author": "ngtuonghy",
 	"license": "ISC",
 	"dependencies": {
-		"@codegenie/serverless-express": "^4.16.0",
-		"@types/aws-serverless-express": "^3.3.10",
 		"axios": "^1.7.9",
 		"cheerio": "^1.0.0",
 		"cors": "^2.8.5",
@@ -23,7 +21,6 @@
 		"ioredis": "^5.4.2",
 		"redis": "^4.7.0",
 		"rimraf": "^6.0.1",
-		"serverless-http": "^3.2.0",
 		"winston": "^3.17.0"
 	},
 	"devDependencies": {
